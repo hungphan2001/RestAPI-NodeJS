@@ -112,9 +112,7 @@ const blockUser = asyncHandler(async (req,res)=>{
             new:true,
         }
        );
-       res.json({
-          message:"User blocked",
-       })
+       res.json(block)
     }catch(error){
         throw new error(error);
     }
@@ -133,9 +131,7 @@ const unlockUser = asyncHandler(async (req,res)=>{
             }
         );
 
-        res.json({
-            message:"User Unblocked",
-         })
+        res.json(unblock)
     } catch(error){
         throw new error(error);
     }
