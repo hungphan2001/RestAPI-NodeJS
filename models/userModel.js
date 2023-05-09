@@ -27,7 +27,19 @@ var userSchema = new mongoose.Schema({
     role:{
         type:String,
         default:'user',
-    }
+    },
+    cart:{
+        type:Array,
+        default:[],
+    },
+    isBlocked:{
+        type:Boolean,
+        default:false,
+    },
+    address:[{type:mongoose.Schema.ObjectId,ref:"Address"}],
+    wishlist:[{type:mongoose.Schema.ObjectId,ref:"Product"}],
+},{
+    timestamps:true,
 });
 
 //Encryted Password
